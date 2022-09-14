@@ -66,8 +66,6 @@ def hsv_pattern(sample, original):
 
             if pixel[i, j][0] >= tuple_color_min[0] and pixel[i, j][0] <= tuple_color_max[0]:
 
-                print(pixel[i, j][0])
-
                 original.putpixel((i, j), color_to_change)
 
     converted_img = original.save("imgs/converted/HSV/img_converted({}).jpg".format(time.time()))
