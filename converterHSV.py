@@ -24,6 +24,6 @@ def image_rgb_2_hsv(img):
     
         hsv_image = Image.merge('RGB', (r, g, b))
 
-        hsv_image.save("imgs/converted/HSV/img_converted({}).jpg".format(time.time()))
+        hsv_image.save("imgs/converted/HSV/img_hsv({}).jpg".format(time.time()))
 
         return hsv_image
