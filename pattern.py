@@ -90,18 +90,20 @@ def rgb_pattern(sample, original):
 
 def hsv_pattern(sample, original):
 
-    color_to_change = (39, 100, 100)
+    range_min, range_max = max_min_pattern_hsv(sample)
+
+    print(range_min, range_max)
 
     pixel = original.load()
 
     for i in range(original.size[0]):
         for j in range(original.size[1]):
 
-            if pixel[i, j] >= (0, 0, 0) and pixel[i, j] <= (40, 100, 100):
+            if pixel[i, j] >= (range_min[0], 0, 0) and pixel[i, j] <= (range_max[0], 0, 0):
 
-                original.putpixel((i, j), color_to_change)
+                original.putpixel((i, j), (0, 0, 0))
 
-    original.save("imgs/converted/HSV/img_hsv_scanned({}).jpg".format(time.time()))
+    original.save("imgs/converted/HSV/Searched/img_hsv_scanned({}).jpg".format(time.time()))
 
     return original
 
